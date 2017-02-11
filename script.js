@@ -29,6 +29,14 @@ function progressBarCalc(){
 			count = count_new;
 			console.log(count);
 			
+			$(".ui-progressbar-value").css({
+				
+			"display": "block",
+			"margin": 0,
+			"width": (parseInt(((checked / count) * 100),10)) + "%"
+				
+			});
+			
 			if (item !=='') {
 			$('ul').append("<li><span class='glyphicon glyphicon-unchecked draggable boxes'></span> " + item +" </li>");
 				
@@ -45,13 +53,26 @@ function progressBarCalc(){
 			var checkBox = $(this).find('.glyphicon');
 			checkBox.toggleClass('glyphicon-unchecked glyphicon-check');
 			$(this).toggleClass("text-muted");
-			checked++;
+//			checked++;
 			console.log(checked);
+//			$(".ui-progressbar-value").css({
+//				
+//				"display": "block",
+//				"width": (parseInt(((checked / count) * 100),10)) + "%"
+				
+//			});
+			
+//			}"display","block");
 			
 			if (checkBox.hasClass('glyphicon-check')) {
 			$(this).appendTo('.toDoItems');
+			checked++;
+			console.log(checked);
+			$(".ui-progressbar-value").css({
 				
-			}
+				"display": "block",
+				"width": (parseInt(((checked / count) * 100),10)) + "%"
+			})
 				
 //			} else {
 //			var del = window.confirm("Delete item?");
@@ -61,11 +82,25 @@ function progressBarCalc(){
 //				}
 //			}
 			
-			$(this).draggable();
+			$(this).draggable({revert:true});
 			
 		progressBarCalc();
 			
+			}
+			
+			else {
+				checked--;
+				console.log(checked);
+				progressBarCalc();
+				$(this).removeClass('draggable');
+				$(".ui-progressbar-value").css({
+				
+				"display": "block",
+				"width": (parseInt(((checked / count) * 100),10)) + "%"
 			})
+			}
+			
+		})
 		
     var percentage = parseInt(((0 / 0) * 100),10);
 		
