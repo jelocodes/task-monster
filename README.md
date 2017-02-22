@@ -6,7 +6,7 @@ A fun side project combining the functionality of a productivity app, with the f
 
 ## How it (will eventually) works: 
 
-You can type in tasks in a form to add them to a To-Do Check List. A monster lives on the screen and has an XP (Experience Points) bar. The XP bar fills for each task completed on your To-dD list. Delete a task by dragging it to, and feeding it to the monster. Complete all of the tasks on your list and the monster gains enough XP to level up.
+You can type in tasks in a form to add them to a To-Do Check List. A monster lives on the screen and has an XP (Experience Points) bar. The XP bar fills for each task completed on your To-do list. Delete a task by dragging it to, and feeding it to the monster. Complete all of the tasks on your list and the monster gains enough XP to level up.
 
 ## Still To-Do:
 
