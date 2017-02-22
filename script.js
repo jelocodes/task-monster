@@ -18,6 +18,8 @@ function progressBarCalc(){
 		$(".progressbar-label").text((parseInt(((checked / count) * 100),10)) + "%");
 	}
 		
+		
+		
 		$(".form-control").focus();
 		
 		$("form").submit(function(e){
@@ -82,7 +84,8 @@ function progressBarCalc(){
 //				}
 //			}
 			
-			$(this).draggable({revert:true});
+			$(this).draggable({revert:'invalid'});	
+				
 			
 		progressBarCalc();
 			
@@ -114,8 +117,74 @@ function progressBarCalc(){
 //	}
 		
 	$(".progressbar-label").text((parseInt(((checked / count) * 100),10)) + "%");
-  
-	 
+		
+//	$('.monster').hover(function(){
+//		$('.ui-draggable-dragging').remove();
+//		count--;
+//		count_new--;
+//		checked--;
+//		if (count == 0 && checked == 0) {
+//			count = 100;
+//		}
+//		progressBarCalc();
+//		$(".ui-progressbar-value").css({
+//			"display": "block",
+//			"width": (parseInt(((checked / count) * 100),10)) + "%"
+//			})
+//		})
+
+		
+	$('.monster').droppable({
+		tolerance: "pointer",
+		drop: function(event, ui) {
+//			$('.ui-draggable-dragging').remove();
+			ui.draggable.remove();
+			count--;
+			count_new--;
+			checked--;
+			if ( count == 0 && checked == 0) {
+				count = 100;
+			}
+			progressBarCalc();
+				$(".ui-progressbar-value").css({				
+				"display": "block",
+				"width": (parseInt(((checked / count) * 100),10)) + "%"
+			})
+		}
+//		drop: function(event, ui) {
+//			$('.ui-draggable-dragging').remove();
+//			count--;
+//			count_new--
+//			checked--;
+//			if ( count == 0 && checked == 0) {
+//				count = 100;
+//			}
+//			progressBarCalc();
+//				$(".ui-progressbar-value").css({				
+//				"display": "block",
+//				"width": (parseInt(((checked / count) * 100),10)) + "%"
+//			})
+//
+//	}	 
 
 		
 	});
+		
+	$('.monster').hover(
+		function(){
+		$(this).attr('src', '/images/Neko-Open.gif')
+	});
+		
+
+		
+		
+		
+
+	
+	$('.monster').mouseout(
+		function(){
+		$(this).attr('src', '/images/Neko-Breathing-Resize.gif')
+	});
+		
+	
+	})

@@ -1,3 +1,7 @@
+body {
+	font-size:23px;
+}
+
 .page-header {
 	display:inline;
 }
@@ -31,7 +35,7 @@ p {
 
 .toDoItems {
 	position:relative;
-	top:400px;	
+	top:440px;	
 }
 
 .ready { font-size: 1.5em; }
@@ -58,4 +62,12 @@ border-radius: 7px;
   left: 45%;
   z-index: 2;
   color:white;
+}
+
+.ui-draggable-dragging {
+	z-index:999;
+}
+
+.ui-droppable-hover {
+	content:url("/images/Neko-Open.gif");
 }
