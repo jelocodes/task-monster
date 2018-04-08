@@ -172,7 +172,7 @@ function progressBarCalc(){
 		
 	$('.monster').hover(
 		function(){
-		$(this).attr('src', '/images/Neko-Open.gif')
+		$(this).attr('src', 'images/Neko-Open.gif')
 	});
 		
 
@@ -183,7 +183,7 @@ function progressBarCalc(){
 	
 	$('.monster').mouseout(
 		function(){
-		$(this).attr('src', '/images/Neko-Breathing-Resize.gif')
+		$(this).attr('src', 'images/Neko-Breathing-Resize.gif')
 	});
 		
 	
